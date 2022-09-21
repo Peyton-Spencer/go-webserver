@@ -9,8 +9,12 @@ import (
 var db = make(map[string]string)
 
 func main() {
+	// example: go-ethereum/rpc eth_subscribe
+	go alchemyPendingStream()
+
+	// example: gin web server
 	r := setupRouter()
-	// Listen and Server in 0.0.0.0:8080
+	// serve on 0.0.0.0:8080
 	r.Run(":8080")
 }
 
